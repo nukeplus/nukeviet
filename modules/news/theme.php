@@ -404,12 +404,13 @@ function viewsubcat_main($viewcat, $array_cat)
                     } else {
                         $xtpl->assign('CLASS', 'icon_list');
                     }
-                    if ($module_config[$module_name]['showtooltip']) {
+                   
+                    $xtpl->assign('OTHER', $array_row_i);
+                     if ($module_config[$module_name]['showtooltip']) {
                         $xtpl->assign('TOOLTIP_POSITION', $module_config[$module_name]['tooltip_position']);
                         $array_row_i['hometext'] = nv_clean60($array_row_i['hometext'], $module_config[$module_name]['tooltip_length'], true);
                         $xtpl->parse('main.listcat.related.loop.tooltip');
                     }
-                    $xtpl->assign('OTHER', $array_row_i);
                     $xtpl->parse('main.listcat.related.loop');
                 }
 
